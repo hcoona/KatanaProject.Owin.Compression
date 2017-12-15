@@ -30,10 +30,10 @@ using Microsoft.Owin.Compression.Storage;
 
 namespace Microsoft.Owin.Compression
 {
-    using SendFileFunc = Func<string, long, long?, CancellationToken, Task>;
-
     internal class StaticCompressionContext
     {
+        internal delegate Task SendFileFunc(string fileName, long offset, long? count, CancellationToken cancel);
+
         private readonly IDictionary<string, object> _environment;
         private readonly StaticCompressionOptions _options;
         private readonly IEncoding _encoding;
