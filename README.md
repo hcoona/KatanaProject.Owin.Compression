@@ -22,6 +22,8 @@ The origin `etag` would be replaced to an encoded `etag` indicating the compress
 
 The cache is simply plat files under system temporary folder.
 
+The internal logics is discussed in https://github.com/hcoona/KatanaProject.Owin.Compression/issues/3
+
 ## Pitfalls ##
 
 1. There is no quota control in current default implementation for cache, neither eviction policies.
