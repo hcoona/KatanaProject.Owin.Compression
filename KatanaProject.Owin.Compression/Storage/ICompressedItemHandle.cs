@@ -15,6 +15,7 @@
 // </copyright>
 
 using System;
+using System.IO;
 
 namespace Microsoft.Owin.Compression.Storage
 {
@@ -22,5 +23,7 @@ namespace Microsoft.Owin.Compression.Storage
     {
         string PhysicalPath { get; }
         long CompressedLength { get; }
+
+        Stream CreateReadCompressedStream();
     }
 }

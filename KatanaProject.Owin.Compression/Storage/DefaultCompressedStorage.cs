@@ -250,6 +250,11 @@ namespace Microsoft.Owin.Compression.Storage
                 get { return _item.CompressedLength; }
             }
 
+            public Stream CreateReadCompressedStream()
+            {
+                return new FileStream(PhysicalPath, FileMode.Open, FileAccess.Read, FileShare.Read);
+            }
+
             public ItemHandle Clone()
             {
                 return new ItemHandle(_item);

@@ -243,9 +243,12 @@ namespace Microsoft.Owin.Compression
                     }
                     else
                     {
-                        // TODO: stream copy operation
+                        // TODO: test it
+                        using (var compressedStream = _compressedItem.CreateReadCompressedStream())
+                        {
+                            return compressedStream.CopyToAsync(_originalResponseBody, 4096, _request.CallCancelled);
+                        }
                     }
-                    return Task.FromResult(0);
                 case InterceptMode.SentFromStorage:
                     _response.ETag = _compressedETag;
                     _response.Headers.Set("Content-Encoding", _encoding.Name);
@@ -258,7 +261,11 @@ namespace Microsoft.Owin.Compression
                         }
                         else
                         {
-                            // TODO: stream copy operation
+                            // TODO: test it
+                            using (var compressedStream = _compressedItem.CreateReadCompressedStream())
+                            {
+                                return compressedStream.CopyToAsync(_originalResponseBody, 4096, _request.CallCancelled);
+                            }
                         }
                     }
                     return Task.FromResult(0);
