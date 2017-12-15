@@ -15,9 +15,10 @@ app.UseStaticCompression(new StaticCompressionOptions());
 This middleware would compress & cache the result if HTTP request header has `accept-encoding` with value of `gzip` or `deflate`.
 
 It would check the `accept-encoding` header in HTTP request & choose the best-wanted format for compressing encoding.
-If compressing necessary, it would check the `etag`, `request path`, `request query string`, `request method` as key from cache.
+If compressing necessary, it would check the `response etag`, `request path`, `request query string`, `request method` as key from cache, which indicates whether the response content changed.
 If the cache hit, it would return compressed result directly from cache.
 If no, it would trigger the next pipeline, compress the result to cache, then return the result.
+The origin `etag` would be replaced to an encoded `etag` indicating the compressed content.
 
 The cache is simply plat files under system temporary folder.
 
