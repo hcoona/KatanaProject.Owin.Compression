@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net45</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>3.0.1</Version>
+    <Authors>Katana Project Authors</Authors>
+    <Company>Microsoft</Company>
+    <Description>This is Microsoft.Owin.Compression package from Katana project.
+This module add GZip &amp; Deflate compression support to OWIN process.</Description>
+    <Copyright>Copyright 2011-2013 Microsoft Open Technologies, Inc. All rights reserved.</Copyright>
+    <PackageLicenseUrl>http://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/hcoona/KatanaProject.Owin.Compression</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/hcoona/KatanaProject.Owin.Compression</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+    <PackageTags>OWIN Katana</PackageTags>
+    <PackageReleaseNotes>This is Microsoft.Owin.Compression package from Katana project.
+This module add GZip &amp; Deflate compression support to OWIN process.</PackageReleaseNotes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Owin" Version="3.0.1" />
+  </ItemGroup>
+
+</Project>
